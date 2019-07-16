@@ -1,0 +1,21 @@
+﻿@model WebApplication.Models.UserViewModel
+
+@{
+    ViewBag.Title = "Add new user";
+}
+
+<h2>Add new user</h2>
+
+<div>
+    <form method="post" action="/user/addnew">
+        <div class="form-group">
+            <label for="usr">Email:</label>
+            <input name="email" type="text" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+            <label for="pwd">UserName:</label>
+            <input name="username" type="text" class="form-control" id="pwd">
+        </div>
+        <input type="submit"/>
+    </form>
+</div>

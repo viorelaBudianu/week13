@@ -27,5 +27,24 @@ namespace WebApplication.Controllers
 
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddNew()
+        {
+            var username = Request.Form["username"];
+            var email = Request.Form["email"];
+
+            var user = new UserViewModel { Email = email, UserName = username, Id = users.Count + 1 };
+
+            users.Add(user);
+
+            return RedirectToAction("Index");
+        }
     }
 }
