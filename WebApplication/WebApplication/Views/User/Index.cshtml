@@ -1,0 +1,33 @@
+﻿@model List<WebApplication.Models.UserViewModel>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>Users</h2>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Email</td>
+                <td>UserName</td>
+                <td>Details</td>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var user in Model)
+                {   
+                        <tr>
+                            <td>@user.Id</td>
+                            <td>@user.Email</td>
+                            <td>@user.UserName</td>
+                            <td><a href="/User/Details/@user.Id">Go</a></td>
+                        </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
