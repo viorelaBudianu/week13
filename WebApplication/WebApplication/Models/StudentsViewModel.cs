@@ -14,7 +14,7 @@ namespace WebApplication.Models
     {
         public string Nume { get; set; }
         public string Prenume { get; set; }
-        public string DataNasterii { get; set; }
+        public DateTime DataNasterii { get; set; }
         public string Email { get; set; }
         public string Telefon { get; set; }
         public Sex Sex { get; set; }
