@@ -12,6 +12,7 @@ namespace WebApplication.Models
     }
     public class StudentsViewModel
     {
+        public int ID { get; set; }
         public string Nume { get; set; }
         public string Prenume { get; set; }
         public DateTime DataNasterii { get; set; }

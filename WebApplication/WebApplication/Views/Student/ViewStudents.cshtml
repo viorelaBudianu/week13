@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebApplication.Models.StudentsViewModel>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View all students</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Add new student", "Add", "Student")
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nume
+                </th>
+                <th>
+                    Prenume
+                </th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+        @{ foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prenume)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                <a href="/Student/Details/@item.ID">See details</a> |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+
+                </td>
+            </tr>
+                }
+            }
+
+    </table>
+</body>
+</html>
