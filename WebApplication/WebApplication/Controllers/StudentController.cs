@@ -77,9 +77,28 @@ namespace WebApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditStudent ()
+        public ActionResult Edit (int id)
         {
-            var name=Request[""]
+            var s = students.Where(x => x.ID == id).FirstOrDefault();
+            //if (Request[])
+            //    student.Nume = Request["Last_Name"]; //aici pun numele inputului
+            //student.Prenume = Request["First_Name"];
+            //student.Adresa = Request["Address"];
+            //student.Email = Request["emailaddress"];
+            //student.Telefon = Request["Mobile_Number"];
+            //student.Oras = Request["City"];
+            //student.Judet = Request["State"];
+            ////student.Sex = Request["Gender"];
+            //var zi = Request["Birthday_day"];
+            //var luna = Request["Birthday_Month"];
+            //var an = Request["Birthday_Year"];
+            //student.ID = students.Count + 1;
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append(zi + "/" + luna + "/" + an);
+            //student.DataNasterii = Convert.ToDateTime(sb);
+            //students.Add(student);
+
+            return RedirectToAction("Index");
         }
         
     }
